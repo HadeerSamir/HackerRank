@@ -466,3 +466,19 @@ static int[] gradingStudents(int[] grades) {
 
         return max;
     }
+
+/* ----------------------------------------------------------------------- */
+
+static String dayOfProgrammer(int year) {
+
+
+        String result = "";
+        
+        if((year % 400 == 0) || ((year % 4 == 0) && (year % 100 != 0))){
+            result = Integer.toString(256-244) + "." + "09" + "." + Integer.toString(year);
+        }else{
+            result = Integer.toString(256-243) + "." + "09"+ "." + Integer.toString(year);
+        }
+
+        return result;
+    }
