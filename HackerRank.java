@@ -420,3 +420,49 @@ static int[] gradingStudents(int[] grades) {
         return count;
 
     }
+
+/* -------------------------------------------------------------------------------- */
+    // Complete the migratoryBirds function below.
+    static int migratoryBirds(List<Integer> arr) {
+
+        int size = arr.size();
+        int count = 0 ;
+        int [] types = new int[5];
+        int result = 0;
+
+            for( int i = 1 ; i <= 5 ; i++ ){
+                for(int j = 0 ; j < size ; j++){
+                        if(i == arr.get(j)){
+                            count++;
+
+                        }
+                }
+                types[i-1] = count;
+                count = 0;
+            }
+
+            int max = getMax(types);
+
+            for(int i = 0 ; i < 5 ; i++){
+                if(max == types[i]){
+                    result = i+1;
+                    break;
+                }
+            }
+        
+
+        return result;
+    }
+
+    static int getMax(int[]arr){
+        int max = 0;
+        int size = arr.length;
+
+        for(int i = 0 ; i < size ; i++){
+            if(arr[i]>max){
+                max = arr[i];
+            }
+        }
+
+        return max;
+    }
