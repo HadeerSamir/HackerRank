@@ -556,3 +556,28 @@ static String dayOfProgrammer(int year) {   /* Check */
 
         return max;
     }
+
+/* ---------------------------------------------------------------------------------------- */
+
+// Complete the catAndMouse function below.
+    static String catAndMouse(int x, int y, int z) {
+
+        String result = "";
+        int distanceBtnCatA_MouseC = Math.abs(z - x);
+        int distanceBtnCatB_MouseC = Math.abs(z - y);
+
+        if(distanceBtnCatA_MouseC < distanceBtnCatB_MouseC){
+            result = "Cat A";
+
+        }else if(distanceBtnCatB_MouseC < distanceBtnCatA_MouseC){
+            result = "Cat B";
+
+        }else{
+            result = "Mouse C";
+        }
+
+        return result;
+
+    }
+/*-----------------------------------------------------------------------------------------*/
+
