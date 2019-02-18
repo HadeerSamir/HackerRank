@@ -485,28 +485,25 @@ static String dayOfProgrammer(int year) {   /* Check */
 
 /* ----------------------------------------------------------------------------------------- */
 
-// Complete the bonAppetit function below.
-    static void bonAppetit(List<Integer> bill, int k, int b) {    /* Check */
+    // Complete the bonAppetit function below.
+    static void bonAppetit(List<Integer> bill, int k, int b) {
 
-        int size = bill.size();
-        int itemAnnDidnotEat = bill.get(k);
-        long sum = 0;
-        long halfCost = 0;
+         int itemAnnDidnotEat = bill.get(k) ;
+         int sum = 0;
 
-        for(int i = 0 ; i < size ; i++){
-            if(itemAnnDidnotEat == bill.get(i)){
-                continue;
-            }else{
-                sum += bill.get(i);
-            }
-        }
+         for(int i = 0 ; i < bill.size() ; i++){
+             if(itemAnnDidnotEat == bill.get(i)){
+                 continue;
+             }else{
+                 sum += bill.get(i);
+             }
+         }
 
-        halfCost = sum / 2;
 
-        if( halfCost == b){
-            System.out.println("Bon Appetit");
+         if( b == sum/2){
+             System.out.println("Bon Appetit");
         }else{
-            System.out.println(b - halfCost);
+            System.out.println(itemAnnDidnotEat / 2);
         }
 
     }
