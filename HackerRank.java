@@ -581,3 +581,33 @@ static String dayOfProgrammer(int year) {   /* Check */
     }
 /*-----------------------------------------------------------------------------------------*/
 
+ // Complete the hurdleRace function below.
+    static int hurdleRace(int k, int[] height) {
+
+        int size = height.length;
+        int max = getMax(height);
+        int result = 0;
+
+        if( k > max){
+            result = 0 ;
+        }else{
+            result = Math.abs(k - max);
+        }
+
+        return result;
+    }
+
+    static int getMax(int [] arr){
+        int max = arr[0];
+        
+        for(int i = 0 ; i < arr.length ; i++){
+            if(arr[i] > max){
+                max = arr[i];
+            }
+        }
+
+        return max;
+    }
+
+/* ----------------------------------------------------------------------------------- */
+
