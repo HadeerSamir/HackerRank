@@ -1,6 +1,6 @@
 /* diagonalDifference */
 
-static int diagonalDifference(int[][] arr) {
+static int diagonalDifference(int[][] arr) {   /* Check */
 
         int absoluteDifference = 0;
         int leftDiagonalSum = 0;
@@ -469,7 +469,7 @@ static int[] gradingStudents(int[] grades) {
 
 /* ----------------------------------------------------------------------- */
 
-static String dayOfProgrammer(int year) {
+static String dayOfProgrammer(int year) {   /* Check */
 
 
         String result = "";
@@ -482,3 +482,33 @@ static String dayOfProgrammer(int year) {
 
         return result;
     }
+
+/* ----------------------------------------------------------------------------------------- */
+
+// Complete the bonAppetit function below.
+    static void bonAppetit(List<Integer> bill, int k, int b) {    /* Check */
+
+        int size = bill.size();
+        int itemAnnDidnotEat = bill.get(k);
+        long sum = 0;
+        long halfCost = 0;
+
+        for(int i = 0 ; i < size ; i++){
+            if(itemAnnDidnotEat == bill.get(i)){
+                continue;
+            }else{
+                sum += bill.get(i);
+            }
+        }
+
+        halfCost = sum / 2;
+
+        if( halfCost == b){
+            System.out.println("Bon Appetit");
+        }else{
+            System.out.println(b - halfCost);
+        }
+
+    }
+
+/* ------------------------------------------------------------------------------- */
