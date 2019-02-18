@@ -611,3 +611,36 @@ static String dayOfProgrammer(int year) {   /* Check */
 
 /* ----------------------------------------------------------------------------------- */
 
+// Complete the designerPdfViewer function below.
+    static int designerPdfViewer(int[] h, String word) {
+        
+        String letters = "abcdefghijklmnopqrstuvwxyz";
+        List <Integer> a = new ArrayList<>();
+
+        for( int i = 0 ; i < word.length() ; i++){
+            int c = letters.indexOf(word.charAt(i));
+            a.add(h[c]);
+        }
+
+        int max = getMax(a);
+        int area = max * word.length();
+
+        return area;
+
+
+    }
+
+    static int getMax(List<Integer>a){
+        int max = a.get(0);
+
+        for(int i = 0 ; i < a.size() ; i++){
+            if(a.get(i) > max){
+                max = a.get(i);
+            }
+        }
+
+        return max;
+    }
+
+/* -------------------------------------------------------------------------------------- */
+
