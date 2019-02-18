@@ -509,3 +509,50 @@ static String dayOfProgrammer(int year) {   /* Check */
     }
 
 /* ------------------------------------------------------------------------------- */
+
+/*
+     * Complete the getMoneySpent function below.
+     */
+    static int getMoneySpent(int[] keyboards, int[] drives, int b) {
+
+        int [] prices = new int [keyboards.length * drives.length];
+        int k = 0;
+        int result = 0;
+
+        while( k < keyboards.length * drives.length ){
+            for( int i = 0 ; i < keyboards.length ; i++ ){
+                for( int j = 0 ; j < drives.length ; j++ ){
+                    prices[k] = keyboards[i]+drives[j];
+                    if(prices[k] > b){
+                        prices[k] = 0 ;
+                    }
+                    k++;
+                }
+            }
+        }
+
+        int max = getMax(prices);
+
+        if(max == 0){
+            result = -1;
+        }else{
+            result = max;
+        }
+
+        return result;
+        
+    }
+
+
+    static int getMax(int[]arr){
+        int max = arr[0];
+
+        for(int i = 0 ; i < arr.length ; i++){
+            if(arr[i] > max){
+                max = arr[i];
+            }
+        }
+
+
+        return max;
+    }
